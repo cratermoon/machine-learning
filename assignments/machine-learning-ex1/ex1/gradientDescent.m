@@ -17,15 +17,16 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-    temp_0 = theta(1) - alpha * 1/m *  sum(computeCost(X, y, theta) - y);
-    temp_1 = theta(2) - alpha * 1/m *  sum((computeCost(X, y, theta) - y)' * X)
+    h = X * theta;
+    errors = h - y;
 
-    theta(1) = temp_0;
-    theta(2) = temp_1;
+    theta_change = alpha * 1/m * (X' * errors); % sum of the product of X and the "errors vector", scaled by alpha and 1/m.
 
-    %theta
-    %computeCost(X, y, theta)
+    theta = theta - theta_change;
 
+    % TODO: rounding
+    % theta
+ 
     % ============================================================
 
     % Save the cost J in every iteration    
