@@ -12,7 +12,7 @@ You'll need [MATLAB](http://www.mathworks.com/products/matlab/) or [GNU Octave](
 for your platform. I wrote these in GNU Octave 4.0.3
 
 See also http://stackoverflow.com/questions/35249881/octave-fontconfig-error if plotting doesn't work or crashes with
-panic: Segmentation fault: 11 -- stopping myself...
+`panic: Segmentation fault: 11 -- stopping myself...` on OS X El Capitan
 
 ## Usage
 
