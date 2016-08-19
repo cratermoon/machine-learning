@@ -20,8 +20,9 @@ for iter = 1:num_iters
     h = X * theta;
     errors = h - y;
 
-    theta_change = alpha * 1/m * (X' * errors); % sum of the product of X and the "errors vector", scaled by alpha and 1/m.
+    % sum of the product of X and the "errors vector", scaled by alpha and 1/m.
 
+    theta_change = alpha/m * (X' * errors);
     theta = theta - theta_change;
 
 

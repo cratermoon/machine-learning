@@ -90,24 +90,61 @@ theta = zeros(3, 1);
 
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
-% Plot the convergence graph
-figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
-xlabel('Number of iterations');
-ylabel('Cost J');
+J1 = J_history;
 
 % Display gradient descent's result
 fprintf('Theta computed from gradient descent: \n');
 fprintf(' %f \n', theta);
 fprintf('\n');
 
+
+
+% alternate alpha/iters #1
+alpha = 0.03;
+num_iters = 500;
+
+% Init Theta and Run Gradient Descent 
+theta = zeros(3, 1);
+
+[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+fprintf('Theta computed from gradient descent alt #1: \n');
+fprintf(' %f \n', theta);
+fprintf('\n');
+
+J2 = J_history;
+
+% alternate alpha/iters #2
+alpha = .9;
+num_iters = 1500;
+
+% Init Theta and Run Gradient Descent 
+theta = zeros(3, 1);
+
+[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+fprintf('Theta computed from gradient descent alt #2: \n');
+fprintf(' %f \n', theta);
+fprintf('\n');
+
+J3 = J_history;
+
+% Plot the convergence graphs
+figure;
+%plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+plot(1:100, J1(1:100), 'b', 'LineWidth', 2);
+xlabel('Number of iterations');
+ylabel('Cost J');
+hold on;
+plot(1:100, J2(1:100), 'r', 'LineWidth', 2);
+plot(1:100, J3(1:100), 'k', 'LineWidth', 2);
+
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-house = [1650, 3]
-house_norm = [1, featureNormalize(house)];
-price = house_norm * theta; % You should change this
+house = [1650, 3] 
+house_norm = (house - mu) ./ sigma;
+
+price = [1, house_norm] * theta; % You should change this
 
 
 % ============================================================
@@ -143,7 +180,7 @@ X = [ones(m, 1) X];
 
 % Calculate the parameters from the normal equation
 theta = normalEqn(X, y);
-keyboard;
+
 % Display normal equation's result
 fprintf('Theta computed from the normal equations: \n');
 fprintf(' %f \n', theta);
@@ -152,7 +189,7 @@ fprintf('\n');
 
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
-price = 0; % You should change this
+price = [1, 1650, 3] * theta; % You should change this
 
 
 % ============================================================
