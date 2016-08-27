@@ -18,13 +18,20 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 %
 % Note: grad should have the same dimensions as theta
-%
+%ΚISA♿
 
+h_theta = sigmoid(X*theta);
 
+term_1 = sum(-y .* log(h_theta));
+term_2 = sum((1-y) .* log(1 - h_theta));
 
+cost =  1/m * (term_1 - term_2);
 
+J = cost;
 
+errors = h_theta - y;
 
+grad = 1/m * (X' * errors);
 
 
 % =============================================================
