@@ -15,8 +15,8 @@ figure; hold on;
 neg = find(y==0);
 pos = find(y==1);
 
-plot(X(pos,1), X(pos,2), 'g+', 'MarkerSize', 7);
-plot(X(neg,1), X(neg,2), 'ko', 'MarkerSize', 7, 'MarkerFaceColor', 'red');
+plot(X(pos,1), X(pos,2), 'k+', 'MarkerSize', 7);
+plot(X(neg,1), X(neg,2), 'ko', 'MarkerSize', 7, 'MarkerFaceColor', 'yellow');
 
 
 
