@@ -16,7 +16,7 @@ See also http://stackoverflow.com/questions/35249881/octave-fontconfig-error if 
 
 ## Usage
 
-TODO: Write usage instructions
+Notes in the form of a gitbook are [here](extra/notes/gitbook/README.md)
 
 ## Contributing
 
@@ -32,9 +32,12 @@ TODO: Write history
 
 ## Credits
 
-TODO: Write credits
+* Steven E. Newton
+* Andrew Ng, instructor
+* SublimeText editor
+* [Atom editor](https://atom.io/)
+* [gitbook](http://gitbook.com)
 
 ## License
 
 TODO: Write license
-
