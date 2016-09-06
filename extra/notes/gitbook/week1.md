@@ -25,7 +25,8 @@ If $x$ is the only input variable, this is **linear regression with one variable
 
 Squared error function is a common and useful convention.
 
-In in a simplified version with just $\theta_1$ shows us that $h(x)$ is the slope of the function. Thus $J(\theta_1$) is a curve with a minimum where $\theta_1 = 1$
+$$ J(\theta_0,\theta_1) = 1/(2m) \sum(h_\theta(x^(i) - y^(i))^2 $$
+In a simplified version with just $\theta_1$ shows us that $h(x)$ is the slope of the function. Thus $J(\theta_1$) is a curve with a minimum where $\theta_1 = 1$
 
 For cost function $h\theta(x) = \theta_0 - \theta_1x$ we find $J(\theta_0,\theta_1)$ is a 3d surface.
 
