@@ -6,8 +6,8 @@ Multiple features (or variables)
 ### Notation
 
 * $n$ = number of features
-* $x^\left(i\right)$ input (features) of the $i$th training example
-* $x_j^\left(i\right)$: value of feature $j$ in the $i$th training example
+* $x^{\left(i\right)}$ input (features) of the $i$th training example
+* $x_j^{\left(i\right)}$: value of feature $j$ in the $i$th training example
 * $y$ price
 
 ### Example
@@ -21,6 +21,6 @@ Multiple features (or variables)
 | 852 | 2 | 1 | 36 | 178 |
 | ... | ... | ... | ... | ... |
 
-$x^\left(2\right) = [ 1416; 3; 2; 40]$
+$x^{\left(2\right)} = [ 1416; 3; 2; 40]$
 
-$x^\left(2\right)_j = 3$
+$x_j^{\left(2\right)} = 3$

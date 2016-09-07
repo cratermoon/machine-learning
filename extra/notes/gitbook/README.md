@@ -1,1 +1,1 @@
-Everything I wrote down about Machine Learning
+Notes for [Coursera Machine Learning](https://www.coursera.org/learn/machine-learning)
