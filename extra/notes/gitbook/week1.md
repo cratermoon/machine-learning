@@ -34,7 +34,7 @@ In a simplified version with just $$\theta_1$$ shows us that $$h(x)$$ is the slo
 For cost function $$h\theta(x) = \theta_0 - \theta_1x$$ we find $$J(\theta_0,\theta_1)$$ is a 3d surface.
 
 ## Gradient Descent Algorithm
-Gradient descent is an algorithm for minimizing $J(\theta_0,\theta_1)$.
+Gradient descent is an algorithm for minimizing $$J(\theta_0,\theta_1)$$.
 
 * Start with some $$\theta_0,\theta_1$$
 * Keep changing $$\theta_0,\theta_1$$ to $$J(\theta_0,\theta_1)$$
