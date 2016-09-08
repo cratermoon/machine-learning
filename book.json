@@ -1,5 +1,5 @@
 {
  "root": "extra/notes/gitbook",
- "plugins": ["mathjax"],
+ "plugins": ["katex"],
  "title": "Course Notes for Coursera Machine Learning"
 }
