@@ -25,9 +25,9 @@ If $$x$$ is the only input variable, this is **linear regression with one variab
 
 Squared error function is a common and useful convention.
 
-$%
+$$
 J(\theta_0,\theta_1) = \frac{1}{2m} \sum(h_\theta(x^{\left(i\right)}) - y^{\left(i\right)})^2
-%$
+$$
 
 In a simplified version with just $$\theta_1$$ shows us that $$h(x)$$ is the slope of the function. Thus $$J(\theta_1)$$ is a curve with a minimum where $$\theta_1 = 1$$
 
