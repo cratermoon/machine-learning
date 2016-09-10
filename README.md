@@ -16,7 +16,7 @@ See also http://stackoverflow.com/questions/35249881/octave-fontconfig-error if 
 
 ## Usage
 
-Notes in the form of a gitbook are [here](extra/notes/gitbook/README.md)
+[Notes in the form of a gitbook](https://cratermoon.gitbooks.io/coursera-machine-learning-notes/content/)
 
 ## Contributing
 
@@ -34,10 +34,11 @@ TODO: Write history
 
 * Steven E. Newton
 * Andrew Ng, instructor
-* SublimeText editor
+* [SublimeText editor](https://www.sublimetext.com/)
 * [Atom editor](https://atom.io/)
 * [gitbook](http://gitbook.com)
 
 ## License
 
-TODO: Write license
+![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License.](http://creativecommons.org/licenses/by-sa/4.0/)

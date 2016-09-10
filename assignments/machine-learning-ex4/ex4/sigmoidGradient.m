@@ -15,10 +15,11 @@ g = zeros(size(z));
 
 
 
-
-
-
-
+for m=1:size(z,1)
+  for n=1:size(z,2)
+    g(m,n) = sigmoid(z(m,n)) * (1 - sigmoid(z(m,n)));
+  end
+end
 
 
 
