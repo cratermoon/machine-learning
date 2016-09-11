@@ -86,6 +86,16 @@ J = cost + regularization_term;
 %               over the training examples if you are implementing it for the
 %               first time.
 %
+d3 = a3 - y_matrix;
+
+d2 = (d3 * Theta2(:,2:end)) .* sigmoidGradient(z2);
+
+Delta1 = d2' * a1;
+Delta2 = d3' * a2;
+
+Theta1_grad = Delta1/m;
+Theta2_grad = Delta2/m;
+
 % Part 3: Implement regularization with the cost function and gradients.
 %
 %         Hint: You can implement this around the code for
