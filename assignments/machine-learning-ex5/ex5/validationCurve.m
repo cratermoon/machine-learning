@@ -17,28 +17,33 @@ error_train = zeros(length(lambda_vec), 1);
 error_val = zeros(length(lambda_vec), 1);
 
 % ====================== YOUR CODE HERE ======================
-% Instructions: Fill in this function to return training errors in 
-%               error_train and the validation errors in error_val. The 
-%               vector lambda_vec contains the different lambda parameters 
-%               to use for each calculation of the errors, i.e, 
-%               error_train(i), and error_val(i) should give 
-%               you the errors obtained after training with 
+% Instructions: Fill in this function to return training errors in
+%               error_train and the validation errors in error_val. The
+%               vector lambda_vec contains the different lambda parameters
+%               to use for each calculation of the errors, i.e,
+%               error_train(i), and error_val(i) should give
+%               you the errors obtained after training with
 %               lambda = lambda_vec(i)
 %
 % Note: You can loop over lambda_vec with the following:
 %
 %       for i = 1:length(lambda_vec)
 %           lambda = lambda_vec(i);
-%           % Compute train / val errors when training linear 
+%           % Compute train / val errors when training linear
 %           % regression with regularization parameter lambda
 %           % You should store the result in error_train(i)
 %           % and error_val(i)
 %           ....
-%           
+%
 %       end
 %
 %
-
+for i = 1:length(lambda_vec)
+  lambda = lambda_vec(i);
+  theta_err = trainLinearReg(X, y, lambda);
+  error_train(i) = linearRegCostFunction(X, y, theta_err, 0);
+  error_val(i) = linearRegCostFunction(Xval, yval, theta_err, 0);
+end
 
 
 
@@ -51,3 +56,16 @@ error_val = zeros(length(lambda_vec), 1);
 % =========================================================================
 
 end
+
+%!test
+%! X = [1 2 ; 1 3 ; 1 4 ; 1 5];
+%! y = [7 6 5 4]';
+%! Xval = [1 7 ; 1 -2];
+%! yval = [2 12]';
+%! [lambda_vec, error_train, error_val] = validationCurve(X,y,Xval,yval );
+%! expected_lambda_vec = [ 0.00000; 0.00100 ; 0.00300 ; 0.01000 ; 0.03000 ; 0.10000 ; 0.30000 ; 1.00000 ; 3.00000 ; 10.00000 ];
+%! expected_error_train = [ 0.00000 ; 0.00000 ; 0.00000 ; 0.00000 ; 0.00002 ; 0.00024 ; 0.00200 ; 0.01736 ; 0.08789 ; 0.27778];
+%! expected_error_val = [0.25000 ; 0.25055 ; 0.25165 ; 0.25553 ; 0.26678 ; 0.30801 ; 0.43970 ; 1.00347 ; 2.77539 ; 6.80556];
+%! assert(lambda_vec, expected_lambda_vec, 0.0001);
+%! assert(error_train, expected_error_train, 0.0001);
+%! assert(error_val, expected_error_val, 0.0001);
