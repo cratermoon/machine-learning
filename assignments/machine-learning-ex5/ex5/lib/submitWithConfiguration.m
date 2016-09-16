@@ -63,12 +63,8 @@ function response = submitParts(conf, email, token, parts)
   body = makePostBody(conf, email, token, parts);
   submissionUrl = submissionUrl();
   params = {'jsonBody', body};
-<<<<<<< HEAD
-  responseBody = urlread(submissionUrl, 'post', params);
-=======
   %responseBody = urlread(submissionUrl, 'post', params);
   [code, responseBody] = system(sprintf('echo jsonBody=%s | curl -k -X POST -d @- %s', body, submissionUrl));
->>>>>>> 4ed26ca... Importing week 6 ex 5. Already completed code for Regularized Linear Regression Cost Function and Regularized Linear Regression Gradient
   response = loadjson(responseBody);
 end
 
