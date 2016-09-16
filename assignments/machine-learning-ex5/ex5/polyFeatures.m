@@ -10,16 +10,19 @@ function [X_poly] = polyFeatures(X, p)
 X_poly = zeros(numel(X), p);
 
 % ====================== YOUR CODE HERE ======================
-% Instructions: Given a vector X, return a matrix X_poly where the p-th 
+% Instructions: Given a vector X, return a matrix X_poly where the p-th
 %               column of X contains the values of X to the p-th power.
 %
-% 
+%
 
 
-
-
+X_poly = X .^ (1:p);
 
 
 % =========================================================================
 
 end
+%!test
+%! p = polyFeatures([1:3]',4)
+%! p_expected = [1    1    1    1; 2    4    8   16; 3    9   27   81];
+%! assert(p, p_expected, 1);
