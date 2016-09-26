@@ -16,13 +16,20 @@ sim = 0;
 %
 %
 
+% simplification from https://en.wikipedia.org/wiki/Radial_basis_function_kernel
+gamma = 1/(2*sigma^2);
 
-
-sim = 0.324652;
-
-sim = exp(-(norm(x1-x2)^2)/(2*sigma^2));
-
+sim = exp(-gamma*(norm(x1 - x2)^2));
 
 % =============================================================
 
 end
+%!test
+%! x1 = [0, 0, 0];
+%! x2 = [2, 4, -1];
+%! sigma = 2;
+%! assert(gaussianKernel(x1, x2, sigma), 0.0724398, 0.001);
+%! x1 = [0, 0, 0];
+%! x2 = [1, 1, 1];
+%! sigma = 3;
+%! assert(gaussianKernel(x1, x2, sigma), 0.846482, 0.001);
