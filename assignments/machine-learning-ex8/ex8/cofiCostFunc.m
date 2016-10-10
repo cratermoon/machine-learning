@@ -41,21 +41,12 @@ Theta_grad = zeros(size(Theta));
 %thetaTransX = X*Theta'
 %e = R.*(thetaTransX - Y)
 term1 = (X*Theta') - Y.*R;
-J = (1/2) * sum(sumsq(term1.*R));
+x_reg = (lambda/2)*sum(sumsq(Theta));
+theta_reg = (lambda/2)*sum(sumsq(X));
+J = (1/2) * sum(sumsq(term1.*R)) + x_reg + theta_reg;
 
-X_grad = term1.*R * Theta;
-Theta_grad = (term1.*R)' * X;
-
-
-
-
-
-
-
-
-
-
-
+X_grad = term1.*R * Theta + lambda.*X;
+Theta_grad = (term1.*R)' * X + lambda.*Theta;
 
 % =============================================================
 
@@ -75,3 +66,15 @@ end
 %! [J grad] = cofiCostFunc(params, Y, R, num_users, num_movies, num_features, lambda);
 %! assert(J,311.63, 0.01)
 %! assert(grad, [-16.1880;-23.5440;-5.1590;-14.9720 ;-21.4380 ;-30.4620 ;-6.5660 ;-19.5440 ;-3.4230 ;-7.0280 ;-3.4140 ;-12.2590 ;-16.0600 ;-9.7420], 0.002);
+%!test
+%! params = [ 1:14 ] / 10;
+%! Y = magic(4);
+%! Y = Y(:,1:3);
+%! R = [1 0 1; 1 1 1; 0 0 1; 1 1 0] > 0.5;     % R is logical
+%! num_users = 3;
+%! num_movies = 4;
+%! num_features = 2;
+%! lambda = 6;
+%! [J grad] = cofiCostFunc(params, Y, R, num_users, num_movies, num_features, lambda);
+%! assert(J,342.08, 0.01)
+%! assert(grad, [-15.5880; -22.3440; -3.3590; -12.5720; -18.4380; -26.8620; -2.3660; -14.7440; 1.9770; -1.0280; 3.1860; -5.0590; -8.2600; -1.3420], 0.002)
